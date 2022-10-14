@@ -4,24 +4,26 @@
 <head>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-		body,
-		html {
-			height: 100%;
-			margin: 20px;
+		* {
+		    margin: 0;
+		    padding: 0;
 		}
-
-		.bg {
-			background-image: url("images/logo.png");
-			height: 100%;
-			background-position: center;
-			background-repeat: no-repeat;
-			background-size: cover;
+		.imgbox {
+		    display: grid;
+		    height: 100%;
+		}
+		.center-fit {
+		    max-width: 100%;
+		    max-height: 100vh;
+		    margin: auto;
 		}
 	</style>
 </head>
 
 <body>
-	<p><img alt="Logo" src="images/logo.png" style="height: 100%; width: 100%; object-fit: contain" /></p>
+	<div class="imgbox">
+		<img class="center-fit" src="images/logo.png" />
+	</div>
 </body>
 
 </html>
