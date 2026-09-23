@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tetasoft – SAP Solution Architecture &amp; Development</title>
+  <meta name="description" content="Tetasoft is an independent SAP consultancy in Denmark. Solution architecture and full-stack development on S/4HANA, SAP BTP, RAP, CAP and Fiori – 25+ years of hands-on delivery.">
+  <link rel="canonical" href="https://www.tetasoft.dk/">
+  <link rel="icon" href="assets/favicon-512.png" type="image/png">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+  <meta name="theme-color" content="#00237a">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tetasoft – SAP Solution Architecture & Development">
+  <meta property="og:description" content="Independent SAP consultancy: S/4HANA, SAP BTP, clean-core extensibility, Fiori and integration.">
+  <meta property="og:url" content="https://www.tetasoft.dk/">
+  <meta property="og:image" content="https://www.tetasoft.dk/assets/tetasoft-logo.jpg">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Tetasoft",
+    "url": "https://www.tetasoft.dk/",
+    "foundingDate": "2003",
+    "logo": "https://www.tetasoft.dk/assets/tetasoft-logo.png",
+    "email": "info@tetasoft.dk",
+    "areaServed": "Europe",
+    "address": { "@type": "PostalAddress", "addressCountry": "DK" },
+    "founder": {
+      "@type": "Person",
+      "name": "Henrik Damhøj Andersen",
+      "jobTitle": "Principal SAP Consultant & Solution Architect",
+      "sameAs": "https://www.linkedin.com/in/henrik-damhoej-andersen"
+    }
+  }
+  </script>
+  <style>
+    :root {
+      --bg: #ffffff;
+      --bg-alt: #f4f7f9;
+      --surface: #ffffff;
+      --text: #1b2733;
+      --muted: #5a6b7b;
+      --line: #dde4ea;
+      --brand: #00237a;
+      --brand-ink: #ffffff;
+      --accent: #1f6fc4;
+      --max: 1080px;
+      --radius: 12px;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0e1620;
+        --bg-alt: #131e2a;
+        --surface: #172433;
+        --text: #e6edf3;
+        --muted: #9fb0c0;
+        --line: #26384a;
+        --brand: #0c2c6e;
+        --brand-ink: #ffffff;
+        --accent: #6cb2f2;
+      }
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 17px/1.6 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+
+    /* Header */
+    header.top {
+      position: sticky; top: 0; z-index: 10;
+      background: color-mix(in srgb, var(--bg) 88%, transparent);
+      backdrop-filter: saturate(160%) blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 124px; }
+    .logo { display: flex; align-items: center; }
+    .logo:hover { text-decoration: none; }
+    .logo img { height: 84px; width: auto; display: block; }
+    @media (max-width: 720px) { header.top .wrap { height: 96px; } .logo img { height: 64px; } }
+    nav ul { list-style: none; display: flex; gap: 26px; margin: 0; padding: 0; }
+    nav a { color: var(--muted); font-size: 15px; font-weight: 500; }
+    nav a:hover { color: var(--text); text-decoration: none; }
+    @media (max-width: 720px) { nav { display: none; } }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #00237a 0%, #164da6 55%, #2277cc 100%);
+      color: #fff;
+      padding: 96px 0 88px;
+    }
+    .eyebrow { text-transform: uppercase; letter-spacing: 2px; font-size: 13px; font-weight: 600; opacity: .8; margin: 0 0 14px; }
+    .hero h1 { font-size: clamp(32px, 5vw, 52px); line-height: 1.12; margin: 0 0 20px; max-width: 16em; font-weight: 700; }
+    .hero p.lead { font-size: clamp(17px, 2vw, 20px); max-width: 38em; opacity: .92; margin: 0 0 34px; }
+    .btns { display: flex; flex-wrap: wrap; gap: 12px; }
+    .btn { display: inline-block; padding: 12px 22px; border-radius: 8px; font-weight: 600; font-size: 16px; }
+    .btn:hover { text-decoration: none; }
+    .btn-primary { background: #fff; color: #00237a; }
+    .btn-primary:hover { background: #e8f0fb; }
+    .btn-ghost { border: 1px solid rgba(255,255,255,.55); color: #fff; }
+    .btn-ghost:hover { background: rgba(255,255,255,.1); }
+
+    .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 64px; border-top: 1px solid rgba(255,255,255,.2); padding-top: 28px; }
+    .stat b { display: block; font-size: 30px; line-height: 1.1; }
+    .stat span { font-size: 14px; opacity: .8; }
+    @media (max-width: 720px) { .stats { grid-template-columns: repeat(2, 1fr); } }
+
+    /* Sections */
+    section { padding: 84px 0; }
+    section.alt { background: var(--bg-alt); }
+    h2 { font-size: clamp(26px, 3.4vw, 34px); line-height: 1.2; margin: 0 0 12px; }
+    .intro { color: var(--muted); max-width: 44em; margin: 0 0 44px; font-size: 18px; }
+
+    .grid { display: grid; gap: 20px; }
+    .grid-3 { grid-template-columns: repeat(3, 1fr); }
+    .grid-2 { grid-template-columns: repeat(2, 1fr); }
+    @media (max-width: 900px) { .grid-3 { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 620px) { .grid-3, .grid-2 { grid-template-columns: 1fr; } }
+
+    .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px; }
+    .card h3 { margin: 12px 0 8px; font-size: 19px; }
+    .card p { margin: 0; color: var(--muted); font-size: 16px; }
+    .icon { width: 42px; height: 42px; border-radius: 10px; display: grid; place-items: center; background: color-mix(in srgb, var(--accent) 14%, transparent); color: var(--accent); }
+    .icon svg { width: 22px; height: 22px; }
+
+    /* Approach */
+    .points { list-style: none; margin: 0; padding: 0; display: grid; gap: 16px; }
+    .points li { display: flex; gap: 14px; }
+    .points li::before { content: ""; flex: 0 0 8px; height: 8px; margin-top: 10px; border-radius: 50%; background: var(--accent); }
+    .points strong { display: block; }
+    .points span { color: var(--muted); }
+
+    /* Skills */
+    .tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+    .tags span { font-size: 13.5px; padding: 4px 10px; border-radius: 6px; background: var(--bg-alt); border: 1px solid var(--line); }
+    section.alt .tags span { background: var(--bg); }
+
+    /* About */
+    .about { display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: start; }
+    @media (max-width: 820px) { .about { grid-template-columns: 1fr; } }
+    .about-title { margin-bottom: 24px; }
+    .about p { margin: 0 0 16px; }
+    .facts { list-style: none; margin: 0; padding: 0; }
+    .facts li { padding: 12px 0; border-bottom: 1px solid var(--line); display: flex; justify-content: space-between; gap: 16px; font-size: 15px; }
+    .facts li:first-child { padding-top: 2px; }
+    .facts li span:first-child { color: var(--muted); }
+    .facts li span:last-child { text-align: right; font-weight: 500; }
+
+    /* Contact */
+    .contact { background: var(--brand); color: var(--brand-ink); text-align: center; }
+    .contact h2 { color: #fff; }
+    .contact p { opacity: .9; max-width: 36em; margin: 0 auto 30px; font-size: 18px; }
+    .contact .btns { justify-content: center; }
+
+    footer { padding: 28px 0; font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); }
+    footer .wrap { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; }
+  </style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Tetasoft home"><img src="assets/whale-160.png" alt="Tetasoft" width="189" height="84"></a>
+    <nav aria-label="Main">
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#expertise">Expertise</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Independent SAP consultancy · Denmark</p>
+      <h1>SAP architecture and development that lasts.</h1>
+      <p class="lead">Tetasoft helps organisations design, build and modernise SAP solutions on S/4HANA and SAP BTP, from clean-core architecture to production-ready solutions.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="#contact">Get in touch</a>
+        <a class="btn btn-ghost" href="#services">Our services</a>
+      </div>
+      <div class="stats">
+        <div class="stat"><b>25+</b><span>years with SAP, since R/3 3.x</span></div>
+        <div class="stat"><b>S/4HANA</b><span>greenfield &amp; migration</span></div>
+        <div class="stat"><b>BTP</b><span>side-by-side extensions</span></div>
+        <div class="stat"><b>10</b><span>industries served</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="services">
+    <div class="wrap">
+      <h2>Services</h2>
+      <p class="intro">Hands-on senior expertise across the whole SAP stack, from business requirements and architecture to back-end services, user interfaces and integrations.</p>
+      <div class="grid grid-3">
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l7-5 7 5v13M9 21v-6h6v6"/></svg></div>
+          <h3>Solution architecture</h3>
+          <p>Lead architect on S/4HANA greenfield programmes, tender solution designs and modernisation projects, with structured effort estimation and architecture governance.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 3 7l9 5 9-5-9-5zM3 17l9 5 9-5M3 12l9 5 9-5"/></svg></div>
+          <h3>Clean-core extensibility</h3>
+          <p>Custom apps and services with RAP, CDS and OData following clean-core principles, plus migration of classic ABAP to ABAP Cloud.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19a4.5 4.5 0 1 0-1.4-8.78A6 6 0 0 0 4.5 12 3.5 3.5 0 0 0 6 19h11.5z"/></svg></div>
+          <h3>SAP BTP development</h3>
+          <p>Side-by-side extensions with SAP CAP, ABAP Environment, HANA Cloud, SAP Build Code and Work Zone, including proofs of concept delivered end to end.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="14" rx="2"/><path d="M8 21h8M12 18v3"/></svg></div>
+          <h3>Fiori &amp; SAPUI5</h3>
+          <p>Fiori Launchpad and Work Zone design, Fiori Elements and freestyle SAPUI5 apps, and mobile iOS/Android solutions.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10M7 7l3-3M7 7l3 3M17 17H7M17 17l-3-3M17 17l-3 3"/></svg></div>
+          <h3>Integration</h3>
+          <p>Configurable integration solutions using OData, ALE/IDoc, EDI, RFC/BAPI, SAP PO, MQTT and SAP Integration Suite, built to keep maintenance low.</p>
+        </div>
+        <div class="card">
+          <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20a6.5 6.5 0 0 1 13 0M16 4.5a3.5 3.5 0 0 1 0 7M21.5 20a6.5 6.5 0 0 0-4-6"/></svg></div>
+          <h3>Technical leadership</h3>
+          <p>Development standards, code review, performance tuning and coaching, so your internal team can take full ownership.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="approach">
+    <div class="wrap grid grid-2" style="gap:48px; align-items:start">
+      <div>
+        <h2>How we work</h2>
+        <p class="intro" style="margin-bottom:0">We combine business understanding with deep technical expertise to turn business requirements into scalable, maintainable SAP solutions.</p>
+      </div>
+      <ul class="points">
+        <li><div><strong>End-to-end ownership</strong><span>From architecture and estimation through implementation to sustainable operation.</span></div></li>
+        <li><div><strong>Productive from day one</strong><span>We get up to speed in new organisations within days.</span></div></li>
+        <li><div><strong>Standards that stick</strong><span>Architecture and development standards that teams can apply and maintain.</span></div></li>
+        <li><div><strong>Clear communication</strong><span>Close dialogue with stakeholders at every level, in Danish or English.</span></div></li>
+      </ul>
+    </div>
+  </section>
+
+
+  <section id="expertise">
+    <div class="wrap">
+      <h2>Expertise</h2>
+      <p class="intro">Industries: pharmaceuticals, utilities, manufacturing, transportation, retail, financial services, service, consulting, defence and the public sector.</p>
+      <div class="grid grid-3">
+        <div class="card"><h3>Back end</h3><div class="tags"><span>ABAP OO</span><span>ABAP Cloud</span><span>RAP</span><span>CDS</span><span>AMDP</span><span>OData V2/V4</span><span>SAP Gateway</span><span>BAdI &amp; enhancements</span></div></div>
+        <div class="card"><h3>Front end</h3><div class="tags"><span>SAPUI5</span><span>Fiori Elements</span><span>Fiori Launchpad</span><span>Work Zone</span><span>OData annotations</span><span>JavaScript</span><span>Mobile</span></div></div>
+        <div class="card"><h3>Cloud &amp; platform</h3><div class="tags"><span>SAP BTP</span><span>SAP CAP</span><span>ABAP Environment</span><span>HANA Cloud</span><span>SAP Build Code</span><span>SAP AI portfolio</span></div></div>
+        <div class="card"><h3>Integration</h3><div class="tags"><span>SAP Integration Suite</span><span>SAP PO</span><span>ALE/IDoc</span><span>EDI</span><span>RFC/BAPI</span><span>MQTT</span></div></div>
+        <div class="card"><h3>Functional</h3><div class="tags"><span>S/4HANA</span><span>S/4HANA Cloud</span><span>FI/CO</span><span>SD/MM</span><span>PP/PM/QM</span><span>HCM</span><span>IS-U</span></div></div>
+        <div class="card"><h3>Methods &amp; tools</h3><div class="tags"><span>Solution architecture</span><span>Effort estimation</span><span>Scrum / SAFe</span><span>Git / abapGit</span><span>Business Application Studio</span><span>VS Code</span></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt" id="about">
+    <div class="wrap">
+      <h2 class="about-title">About Tetasoft</h2>
+      <div class="about">
+      <div>
+        <p>Founded in 2003, Tetasoft is an independent Danish SAP consultancy specialising in solution architecture and full-stack development on SAP S/4HANA and SAP BTP.</p>
+        <p>We work as an integrated part of our clients' teams on greenfield implementations, modernisation and migration projects, side-by-side extensions and integrations. We stay involved from the first architecture decisions through to stable operation.</p>
+        <p>Our work follows SAP's clean-core direction and uses SAP's latest extensibility and AI capabilities. We deliver maintainable, well-documented solutions and share the knowledge, so our clients' own teams can take over with confidence.</p>
+      </div>
+      <ul class="facts">
+        <li><span>Founded</span><span>2003</span></li>
+        <li><span>Focus</span><span>SAP S/4HANA &amp; SAP BTP</span></li>
+        <li><span>SAP experience</span><span>25+ years, since 1997</span></li>
+        <li><span>Engagements</span><span>Architecture, development, integration, advisory</span></li>
+        <li><span>Industries</span><span>Pharma, utilities, manufacturing, transport, retail, finance, service, defence, public sector</span></li>
+        <li><span>Based in</span><span>Denmark, working internationally</span></li>
+      </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="wrap">
+      <h2>Let's talk about your SAP project</h2>
+      <p>Planning an S/4HANA implementation, a BTP extension or a modernisation of legacy SAP code? Get in touch for an informal conversation.</p>
+      <div class="btns">
+        <a class="btn btn-primary" href="mailto:info@tetasoft.dk">info@tetasoft.dk</a>
+        <a class="btn btn-ghost" href="https://www.linkedin.com/in/henrik-damhoej-andersen" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="year">2026</span> Tetasoft · Denmark</span>
+    <span>www.tetasoft.dk</span>
+  </div>
+</footer>
+<script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
