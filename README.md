@@ -1,31 +1,34 @@
-# Tetasoft website
+<p align="center">
+  <img src="assets/tetasoft-logo.png" alt="Tetasoft" width="320">
+</p>
 
-Static one-page site for https://www.tetasoft.dk, hosted on GitHub Pages. No build step.
+# Tetasoft A/S
 
-## Files
-- `index.html` – the whole site (inline CSS, no external dependencies/cookies)
-- `404.html` – not-found page
-- `assets/` – logo (original + transparent PNG), header whale, favicon, apple-touch icon
-- `robots.txt`, `sitemap.xml` – for search engines (update `lastmod` when content changes)
-- `CNAME` – custom domain `www.tetasoft.dk`
-- `.nojekyll` – serve files as-is
+Founded in 2003, Tetasoft A/S is an independent Danish SAP consultancy specialising in solution architecture and full-stack development on SAP S/4HANA and SAP BTP.
 
-## Deploy
-1. Create a GitHub repo (e.g. `tetasoft-web`) and push these files to `main`.
-2. Repo → Settings → Pages → Source: *Deploy from a branch*, branch `main`, folder `/ (root)`.
-3. Custom domain: `www.tetasoft.dk` (read from `CNAME`), then tick **Enforce HTTPS** once the certificate is issued.
+We help organisations design, build and modernise SAP solutions, from clean-core architecture to production-ready solutions. We work as an integrated part of our clients' teams and stay involved from the first architecture decisions through to stable operation.
 
-## DNS (at the tetasoft.dk DNS provider)
-| Type  | Name | Value |
-|-------|------|-------|
-| CNAME | www  | `<github-username>.github.io` |
-| A     | @    | 185.199.108.153 |
-| A     | @    | 185.199.109.153 |
-| A     | @    | 185.199.110.153 |
-| A     | @    | 185.199.111.153 |
+## Services
 
-The apex `A` records make `tetasoft.dk` redirect to `www.tetasoft.dk`.
-Optionally verify the domain under GitHub → Settings → Pages (account level) to prevent takeover.
+- **Solution architecture:** lead architecture on S/4HANA greenfield programmes, tender solution designs and modernisation projects, with structured effort estimation and architecture governance.
+- **Clean-core extensibility:** custom apps and services with RAP, CDS and OData, and migration of classic ABAP to ABAP Cloud.
+- **SAP BTP development:** side-by-side extensions with SAP CAP, ABAP Environment, HANA Cloud, SAP Build Code and Work Zone.
+- **Fiori & SAPUI5:** Fiori Launchpad and Work Zone design, Fiori Elements and freestyle SAPUI5 apps, and mobile solutions.
+- **Integration:** SAP Integration Suite, SAP PO, OData, ALE/IDoc, EDI, RFC/BAPI and MQTT, built to keep maintenance low.
+- **Technical leadership:** development standards, code review, performance tuning and coaching, so internal teams can take full ownership.
 
-## After launch
-Add https://www.tetasoft.dk in Google Search Console (DNS TXT verification) and submit `sitemap.xml`.
+## Facts
+
+| | |
+|---|---|
+| Founded | 2003 |
+| Focus | SAP S/4HANA & SAP BTP |
+| SAP experience | 25+ years, since 1997 |
+| Industries | Pharma, utilities, manufacturing, transport, retail, finance, service, defence, public sector |
+| Based in | Denmark, working internationally |
+| VAT no. | DK28860617 |
+
+## Contact
+
+- Web: [www.tetasoft.dk](https://www.tetasoft.dk)
+- Email: [info@tetasoft.dk](mailto:info@tetasoft.dk)
