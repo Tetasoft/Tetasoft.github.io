@@ -57,6 +57,8 @@
       --accent: #1f6fc4;
       --max: 1080px;
       --radius: 12px;
+      --logo-light: block;
+      --logo-dark: none;
     }
     @media (prefers-color-scheme: dark) {
       :root {
@@ -69,6 +71,8 @@
         --brand: #0c2c6e;
         --brand-ink: #ffffff;
         --accent: #6cb2f2;
+        --logo-light: none;
+        --logo-dark: block;
       }
     }
     *, *::before, *::after { box-sizing: border-box; }
@@ -94,7 +98,9 @@
     header.top .wrap { display: flex; align-items: center; justify-content: space-between; height: 124px; }
     .logo { display: flex; align-items: center; }
     .logo:hover { text-decoration: none; }
-    .logo img { height: 84px; width: auto; display: block; }
+    .logo img { height: 84px; width: auto; }
+    .logo .logo-light { display: var(--logo-light); }
+    .logo .logo-dark { display: var(--logo-dark); }
     @media (max-width: 720px) { header.top .wrap { height: 96px; } .logo img { height: 64px; } }
     nav ul { list-style: none; display: flex; gap: 26px; margin: 0; padding: 0; }
     nav a { color: var(--muted); font-size: 15px; font-weight: 500; }
@@ -178,7 +184,7 @@
 
 <header class="top">
   <div class="wrap">
-    <a class="logo" href="#top" aria-label="Tetasoft home"><img src="assets/whale-160.png" alt="Tetasoft" width="189" height="84"></a>
+    <a class="logo" href="#top" aria-label="Tetasoft home"><img class="logo-light" src="assets/logo-header.png" alt="Tetasoft" width="144" height="84"><img class="logo-dark" src="assets/logo-header-dark.png" alt="Tetasoft" width="144" height="84"></a>
     <nav aria-label="Main">
       <ul>
         <li><a href="#services">Services</a></li>
