@@ -6,6 +6,7 @@ Static one-page site for https://www.tetasoft.dk, hosted on GitHub Pages. No bui
 - `index.html` – the whole site (inline CSS, no external dependencies/cookies)
 - `404.html` – not-found page
 - `assets/` – logo (original + transparent PNG), header whale, favicon, apple-touch icon
+- `robots.txt`, `sitemap.xml` – for search engines (update `lastmod` when content changes)
 - `CNAME` – custom domain `www.tetasoft.dk`
 - `.nojekyll` – serve files as-is
 
@@ -25,3 +26,6 @@ Static one-page site for https://www.tetasoft.dk, hosted on GitHub Pages. No bui
 
 The apex `A` records make `tetasoft.dk` redirect to `www.tetasoft.dk`.
 Optionally verify the domain under GitHub → Settings → Pages (account level) to prevent takeover.
+
+## After launch
+Add https://www.tetasoft.dk in Google Search Console (DNS TXT verification) and submit `sitemap.xml`.
